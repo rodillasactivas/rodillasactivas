@@ -1,0 +1,15 @@
+/* 1. Modificar los títulos*/
+
+h1 {
+
+    text-align: center;
+    color: red;
+    font-size: 3rem;
+}
+
+audio {
+    display: block;
+    width: 80%;
+    max-width: 500px;
+    margin: 30px auto;
+}
