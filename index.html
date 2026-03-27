@@ -8,18 +8,61 @@
 </head>
 <body>
 
-    <h1>Escuche este audio con atención</h1>
+    <h1>Sé lo que es sentir que su cuerpo le pone límites</h1>
 
-    <div>
+    <div class="seccion-1">
 
-        <audio controls src="dropshiping-rodilleras/audios-landing-page/osled-audio-inicial-landing-page.mp3"></audio>
+
+        <h2>Por favor escuche este audio de 40 segundos para usted 👇🏻</h2>
+
+         <audio class="audio-inicial" controls src="dropshiping-rodilleras/audios-landing-page/osled-audio-inicial-landing-page.mp3"></audio>
+
+        <video class="video-inicial" controls controlsList="nodownload nopaybackrate" src="dropshiping-rodilleras/videos-landing-page/BIENVENIDA-WHATSAPP-COMPRIMIDO.mp4"></video>
+        <a href="https"
+        class="btn-whatsapp"
+        target="_blank">
+        Pida un par ahora mismo </a>
+
+        <h2>Un par por solo $58.000 pesos</h2>
+
+    <section class="envio-gratis">
+    <h3>Consultar envío Gratis 🚚</h3>
+    <p>Ingrese su ubicación para verificar el envío gratis:</p>
+    
+    <div class="formulario-consulta">
+        <input type="text" id="input-dpto" placeholder="Departamento (ej: Antioquia)" required>
+        <input type="text" id="input-ciudad" placeholder="Ciudad o Municipio" required>
+        
+        <button type="button" class="btn-consultar" onclick="consultarEnvio()">
+            Consultar
+        </button>
+    </div>
+
+    <div id="resultado" class="mensaje-resultado"></div>
+</section>
+    
+
+
+
+
 
 
     </div>
 
+    <div class="seccion-2">
+        <h2>OJO, si usted sufre de obesidad o sus rodillas miden más de 40 centimetros de diametro no son ideales para usted y le quedarán muy apretadas</h2>
+    </div>
+
     
 
-    <h2>osled</h2>
     
+
+
+    <script src="datos-envios.js"></script>
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>
 </body>
 </html>
