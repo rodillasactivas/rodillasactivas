@@ -95,7 +95,7 @@ function verificarMedida(ciudad, dpto) {
 
     if (parseFloat(medida) <= 40) {
         const mensajeWA = `Hola vivo en ${ciudad}, ${dpto}. Deseo el par de rodilleras por $58.000 con envío gratis.`;
-        const urlWA = `https://wa.me/573001234567?text=${encodeURIComponent(mensajeWA)}`;
+        const urlWA = `https://wa.me/573113171127?text=${encodeURIComponent(mensajeWA)}`;
 
         respuestaDiv.innerHTML = `
             <div style="border: 2px solid #007bff; padding: 20px; border-radius: 15px; background: #eef6ff; margin-top:20px;">
