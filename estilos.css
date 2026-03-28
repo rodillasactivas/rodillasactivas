@@ -1,9 +1,22 @@
 
 /* 2. Modificar de los contenedores*/
 
+* {
+    margin: 0;
+    width: 100%;
+    max-width: 600%;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
 .seccion-1 {
   /* Ancho total */
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -24,112 +37,37 @@
    
 }
 
-.seccion-2 {
-  /* Ancho total */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  align-items: center;
-
-  
-  /* Altura: puede ser fija o basada en la pantalla (vh) */
-  min-height: 10vh; /* 100vh equivale al 100% del alto de la ventana */
-  
-  /* Fondo para visualizar el área */
-  background-color: #f4f4f4;
-  
-  /* El "Box Model" */
-  padding: 40px;    /* Espacio interno */
-  margin: 0 auto;   /* Centra el contenedor si le da un ancho máximo */
-  max-width: 1200px; /* Evita que el contenido se estire demasiado en monitores grandes */
-   
-}
-
-.envio-gratis {
-    background-color: #1dd0e7;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    max-width: 20px auto;
-    margin: 20px auto;
-    border: 1px;
-
-}
-
-.formulario-consulta {
-    background-color: #1dd0e7;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    max-width: 20px auto;
-    margin: 20px auto;
-    border: 1px;
-}
-.btn-consultar {
-    width: auto;
-    background-color: #007bff; /* Un azul profesional, o use el verde de antes */
-    color: white;
-    padding: 12px 25px;
-    border: none;
-   border-radius: ;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.btn-pedido-final {
-    display: inline-block;
-    background-color: #25d366;
-    color: white;
-    padding: 15px 25px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5dvh; /* Su redondeo preferido */
-    margin-top: 10px;
-}
-
-.mensaje-resultado {
-    margin-top: 15px;
-    font-size: 1.1em;
-    font-family: sans-serif;
-}
-
-/* H1 */
-
-h1 {
-
+.título-principal {
+    margin-bottom: 20px;
     text-align: center;
     color: red;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
-/* H2 */
 h2 {
     text-align: center;
     width: 100%;
-    
+    margin-bottom: 1.5rem;
+
 }
 
+h3 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 3dvh;
+}
 
-
-/* H3 */
-
-
-
-/* P */
-
-
-
-/* IMAGEN */
-
-
+h4 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+}
 
 /* VIDEO */
 
 .video-inicial {
 /*Control de tamaño*/
-width: 25%; /*En móviles ocupará todo el ancho*/
+width: 50%; /*En móviles ocupará todo el ancho*/
 max-width: 800px; /*En computadoras no superará este tamaño*/
 padding: 50px;
 display: flex;
@@ -137,16 +75,150 @@ justify-content: center;
 display: block;
 margin-left: auto;
 margin-right: auto;
+}
 
 
 
-/*Control de forma y proporción*/
-aspect-ratio: 9 / 16; /*Mantiene el formato cinemático estándar */
 
-/*Control de comportamiento del contenido*/
-border-radius: 0px; /*Bordes redondeados*/
-box-shadow: 0 15px 35px rgba(red, green, blue, alpha);
+.envio-gratis {
+    width: 100%;
+    background-color: #1dd0e7;
+    text-align: center;
+    margin-top: 0%;
+    
+    
+}
 
+.formulario-consulta {
+    background-color: #1dd0e7;;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 800px auto;
+    margin: 20px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+
+    /*Este es el espacio en el que van los rectangulos para consultar*/
+
+    #input-dpto {
+    width: 250px;       /* Anchura de la pieza */
+    height: 45px;      /* Altura o calibre */
+    padding: 10px;      /* Espacio interno */
+    font-size: 18px;    /* Tamaño de la letra */
+    border: 2px solid #25d366; /* Color de Esencia Verde */
+    border-radius: 8px; /* Esquinas suavizadas */
+}
+
+/* También para el otro input */
+#input-ciudad {
+    width: 250px;
+    height: 45px;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #25d366;
+    border-radius: 8px;
+}
+}
+/*Es el botón para consultar la ubicación*/
+.btn-consultar {
+    width: auto;
+    background-color: #007bff; /* Un azul profesional, o use el verde de antes */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/*confirmación envío gratis*/
+.envio-gratis {
+    display:inline-block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+    /*Indicación para medida de la rodilla*/
+ .medida-rodilla {
+    width: 100%;
+    
+ }  
+
+ /*Contenedor para el cuadro de la medida de la rodilla*/*
+.cuadro-medida {
+     display: flex;
+    justify-content: center;
+}
+
+/*Cuadro de la medida de la rodilla*/
+.input-medida-rodilla {
+    width: 10%;
+    height: 50px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/*Contenedor para botón de confirmar medida rodilla*/
+.btn-confirmar-medida {
+    display: flex;
+    justify-content: center;
+}
+/*Botón de confirmar medida rodilla*/
+.btn-confirmar-medida-rodilla {
+    background-color: #007bff;
+    color: white;
+    width: 20%;
+    height: 50px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 10PX;
+    margin-bottom: 10px;
+}
+
+
+
+.mensaje-resultado {
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-family: sans-serif;
+}
+
+/*Contenedor whatsapp*/
+.btn-contenedor-whatsapp{
+    width: 100%;
+    background-color: aliceblue;
+    height: 5%;
+    padding: 20px;
+
+
+}
+.btn-pedido-final {
+    width: 25%;
+    
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    align-items: center;
+    background-color:#25d366; /*verde oficial de whatsapp*/
+    color: white;
+    text-decoration: none;
+    border-radius: 20px 20px 20px 20px;
+    font-weight: bold; 
+
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 @media (max-widht: 768px){
@@ -167,14 +239,26 @@ box-shadow: 0 15px 35px rgba(red, green, blue, alpha);
 
 }
 
-.btn-whatsapp {
-    text-decoration: none;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color:#25d366; /*verde oficial de whatsapp*/
-    color: white;
-    text-decoration: none;
-    border-radius: 20px 20px 20px 20px;
-    font-weight: bold; 
+/* Centra el bloque de la lista debajo del botón */
+.contenedor-lista-beneficios {
+    display: flex;
+    justify-content: left;
+    margin-top: 30px; /* Espacio de separación con el botón */
 }
 
+/* Alinea los textos a la izquierda para que se vean ordenados */
+.lista-beneficios-final {
+    list-style: none; /* Quitamos los puntos por defecto */
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Clave para la simetría vertical */
+    display: inline-block;
+}
+
+/* Estilo de cada renglón de beneficio */
+.lista-beneficios-final li {
+    font-size: 17px;
+    margin-bottom: 10px; /* Salto de línea uniforme */
+    color: #333;
+    line-height: 1.4;
+}

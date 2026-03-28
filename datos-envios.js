@@ -42,9 +42,10 @@ function consultarEnvio() {
     const dptoBruto = document.getElementById('input-dpto').value;
     const ciudadBruta = document.getElementById('input-ciudad').value;
     const respuestaDiv = document.getElementById('resultado');
+    
 
     if (!dptoBruto || !ciudadBruta) {
-        respuestaDiv.innerHTML = "<p style='color:red;'>Por favor, complete ambos campos.</p>";
+        respuestaDiv.innerHTML = "<p style='color:red;'><b>☝ Primero debe indicar el lugar</b></p>";
         return;
     }
 
@@ -64,14 +65,30 @@ function consultarEnvio() {
         if (tieneGratis) {
             // AQUÍ USAMOS LAS VARIABLES "BONITAS"
             respuestaDiv.innerHTML = `
-                <div style="border: 2px solid #25d366; padding: 20px; border-radius: 15px; background: #f0fff4; margin-top:20px;">
-                    <p style="color:#1b5e20; font-weight:bold;">✅ ¡Excelente! Usted tiene Envío Gratis para ${ciudadBonita}, ${dptoBonito}.</p>
-                    <hr>
-                    <p>Para asegurar que su rodillera le quede perfecta, <b>¿cuánto mide el diámetro de su rodilla?</b></p>
-                    <input type="number" id="medida-rodilla" placeholder="Ej: 35" style="padding:10px; width:80px; border-radius:5px; border:1px solid #ccc;"> <b>cm</b>
+                <div class="envio-gratis">
+                    <p=><b>✅ Sí tenemos envío gratis y pago contra entrega para ${ciudadBonita}, ${dptoBonito}</b></p>
+                    <br></br>
+                    <div class="medida-rodilla">
+                    <p="indicacion-medida-rodillera">Por favor indíqueme <b>¿cuánto mide el diámetro de su rodilla en centímetros?</b></p>
+                    </div>
+                    <br></br>
+
+                    <h2><b>¿Cómo saber la medida?</b> 👇</h2>
+
+                    <div>
+                     <video class="video-inicial" controls controlsList="nodownload nopaybackrate" src="dropshiping-rodilleras/videos-landing-page/BIENVENIDA-WHATSAPP-COMPRIMIDO.mp4"></video>
+                    
+                    </div>
+
+                    <div class="cuadro-medida">
+                    <input type number" id="medida-rodilla" class="input-medida-rodilla" placeholder="Ej: 40 Cm">
+                    </div>
+
                     <br><br>
-                    <button type="button" class="btn-consultar" onclick="verificarMedida('${ciudadBonita}', '${dptoBonito}')">
+                    <div class="btn-confirmar-medida">
+                    <button type="button" class="btn-confirmar-medida-rodilla" onclick="verificarMedida('${ciudadBonita}', '${dptoBonito}')">
                         Confirmar Medida
+                        </div>
                     </button>
                 </div>
             `;
@@ -79,7 +96,7 @@ function consultarEnvio() {
             respuestaDiv.innerHTML = `<p style="color:orange;">📍 Para ${ciudadBonita}, el envío tiene un costo adicional.</p>`;
         }
     } else {
-        respuestaDiv.innerHTML = `<p style="color:red;">❌ No encontramos cobertura para ${dptoBonito}.</p>`;
+        respuestaDiv.innerHTML = `<p style="color:red;">😰 <b>No tenemos envío gratis para ${ciudadBonita},${dptoBonito}</b></p>`;
     }
 }
 
@@ -93,20 +110,41 @@ function verificarMedida(ciudad, dpto) {
         return;
     }
 
-    if (parseFloat(medida) <= 40) {
+    if (parseFloat(medida) <= 45) {
         const mensajeWA = `Hola vivo en ${ciudad}, ${dpto}. Deseo el par de rodilleras por $58.000 con envío gratis.`;
         const urlWA = `https://wa.me/573113171127?text=${encodeURIComponent(mensajeWA)}`;
 
         respuestaDiv.innerHTML = `
-            <div style="border: 2px solid #007bff; padding: 20px; border-radius: 15px; background: #eef6ff; margin-top:20px;">
-                <p><b>¡Excelente!</b> Sus medidas son aptas para nuestras rodilleras.</p>
-                <p>¿Le gustaría encargar el par de rodilleras por solo <b>$58.000 pesos con envío gratis</b> hasta ${ciudad}, ${dpto}?</p>
+            <div class="btn-contenedor-whatsapp">
+                <p><b>✅ ¡Excelente! Estas rodilleras son ideales para usted</b></p>
+                <br></br>
+                <p>¿Le gustaría encargar el par de rodilleras por solo <b>$58.000 pesos con envío gratis y pago contra entrega</b> hasta ${ciudad}, ${dpto}?</p>
                 <a href="${urlWA}" target="_blank" class="btn-pedido-final";>
-                    Pedir por WhatsApp ahora
+                   👉 Pedir por WhatsApp
                 </a>
-            </div>
-        `;
+
+                <br></br>
+
+                <h2>Beneficios de usar estas rodilleras</h2>
+        
+
+                <div class="contenedor-lista-beneficios">
+            <ul class="lista-beneficios-final">
+                <li>✅ Reducción de la carga mecánica</li>
+                <li>✅ Estabilidad rotuliana</li>
+                <li>✅ Mejora la propiocepción</li>
+                <li>✅ Ajuste de compresión personalizado</li>
+                <li>✅ Efecto térmico localizado</li>
+                <li>✅ Control de la inflamación</li>
+                <li>✅ Brinda soporte que mitiga la incomodidad</li>
+                <li>✅ Prevención de lesiones</li>
+                <li>✅ Sensación de seguridad al apoyar</li>
+
+            </ul>
+        </div>
+    </div>
+`;
     } else {
-        respuestaDiv.innerHTML = `<p style="color:red;">⚠️ <b>Nuestras rodilleras solo sirven para medidas inferiores a 40 cm de diámetro</b> </p>`;
+        respuestaDiv.innerHTML = `<p style="color:red;">⚠️ <b>Este producto no es apto para rodillas que superen los 40 centímetros de diámetro</b> </p>`;
     }
 }
