@@ -37,6 +37,8 @@ const capitalizarTexto = (texto) => {
     ).join(' ');
 };
 
+
+
 function consultarEnvio() {
     // Capturamos lo que escribió el cliente
     const dptoBruto = document.getElementById('input-dpto').value;
@@ -53,14 +55,45 @@ function consultarEnvio() {
     const dptoBonito = capitalizarTexto(dptoBruto);
     const ciudadBonita = capitalizarTexto(ciudadBruta);
 
+
+
     // CREAMOS LAS VERSIONES DE BÚSQUEDA (Minúsculas y sin tildes)
     const dptoBusqueda = normalizar(dptoBruto);
     const ciudadBusqueda = normalizar(ciudadBruta);
 
+    // 1. Buscamos si lo que escribió en el primer cuadro existe como Departamento
+const deptoExiste = Object.keys(coberturaGratis).some(k => normalizar(k) === normalizar(dptoBruto));
+
+// 2. Si NO existe, lanzamos la alerta y frenamos el código
+if (!deptoExiste) {
+    respuestaDiv.innerHTML = "<p style='color:red;'><b>☝ Debe escribir el Departamento en el primer cuadro</b></p>";
+    return;
+}
+
+
     const deptoEncontrado = Object.keys(coberturaGratis).find(k => normalizar(k) === dptoBusqueda);
+
 
     if (deptoEncontrado) {
         const tieneGratis = coberturaGratis[deptoEncontrado].some(c => normalizar(c) === ciudadBusqueda);
+
+
+        // 1. Verificamos si lo que escribió el cliente es realmente un DEPARTAMENTO
+    // (Buscamos si el texto existe como una 'llave' en su objeto coberturaGratis)
+    const esDptoReal = Object.keys(coberturaGratis).some(k => normalizar(k) === dptoBusqueda);
+
+    if (!esDptoReal) {
+        respuestaDiv.innerHTML = `
+            <p style='color:red;'>
+                <b>⚠️ Error: Debe escribir un.</b><br>
+                <small>Ejemplo: Caquetá, Antioquia, Huila...</small>
+            </p>`;
+        return; // Detenemos el código para que no siga procesando
+    }
+        
+
+
+
 
         if (tieneGratis) {
             // AQUÍ USAMOS LAS VARIABLES "BONITAS"
