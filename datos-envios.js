@@ -76,13 +76,14 @@ function consultarEnvio() {
                     <h2><b>¿Cómo saber la medida?</b> 👇</h2>
 
                     <div>
-                     <video class="video-inicial" controls controlsList="nodownload nopaybackrate" src="dropshiping-rodilleras/videos-landing-page/BIENVENIDA-WHATSAPP-COMPRIMIDO.mp4"></video>
-                    
+                     <video class="video-medida-rodillera" controls controlsList="nodownload nopaybackrate" src="dropshiping-rodilleras/videos-landing-page/MEDIDA RODILLERA.mp4"></video>
                     </div>
 
                     <div class="cuadro-medida">
                     <input type number" id="medida-rodilla" class="input-medida-rodilla" placeholder="Ej: 40 Cm">
                     </div>
+
+
 
                     <br><br>
                     <div class="btn-confirmar-medida">
@@ -111,7 +112,7 @@ function verificarMedida(ciudad, dpto) {
     }
 
     if (parseFloat(medida) <= 45) {
-        const mensajeWA = `Hola vivo en ${ciudad}, ${dpto}. Deseo el par de rodilleras por $58.000 con envío gratis.`;
+        const mensajeWA = `Hola vivo en ${ciudad}, ${dpto} y quiero encargar el par de rodilleras por $58.000 con envío gratis y pago contra entrega`;
         const urlWA = `https://wa.me/573113171127?text=${encodeURIComponent(mensajeWA)}`;
 
         respuestaDiv.innerHTML = `
