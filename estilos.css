@@ -306,3 +306,34 @@ margin-bottom: 0px;
     font-size: 14px;
     text-align: left;
 }
+
+
+.contenedor-info-tienda {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: sans-serif;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    font-weight: bold;
+    color: #333;
+    outline: none;
+}
+
+.politica-contenedor {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: sans-serif;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    font-weight: bold;
+    color: #333;
+    outline: none;
+}
