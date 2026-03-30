@@ -127,7 +127,7 @@ if (!deptoExiste) {
                 </div>
             `;
         } else {
-            respuestaDiv.innerHTML = `<p style="color:orange;">📍 Para ${ciudadBonita}, el envío tiene un costo adicional.</p>`;
+            respuestaDiv.innerHTML = `<p style="color:orange;">📍 Para ${ciudadBonita}, No corresponde un lugar con el otro</p>`;
         }
     } else {
         respuestaDiv.innerHTML = `<p style="color:red;">😰 <b>No tenemos envío gratis para ${ciudadBonita},${dptoBonito}</b></p>`;
